@@ -1,16 +1,150 @@
-# React + Vite
+# Rural Health Access Assistant
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🩺 Problem Statement
+**Lack of Access to Healthcare in Underserved Communities**
 
-Currently, two official plugins are available:
+In many rural and underserved areas, people struggle to:
+- Know which healthcare facilities are available nearby  
+- Decide *where to go* based on their symptoms  
+- Access updated, reliable information about public healthcare resources  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+This project aims to **bridge that gap** using a simple, accessible web application.
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Project Overview
+This is a **full‑stack MERN application** that helps users:
+- Enter symptoms and get basic care guidance
+- View nearby healthcare facilities (clinics, PHCs, hospitals)
+- Read important health notices
 
-## Expanding the ESLint configuration
+It also provides an **Admin interface** to manage healthcare data, reflecting how **local health workers or NGOs** could maintain real‑world information.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧱 Tech Stack
+
+### Frontend
+- React (Vite)
+- React Router
+- Fetch API
+
+### Backend
+- Node.js
+- Express.js
+
+### Database
+- MongoDB Atlas
+- Mongoose
+
+---
+
+## 📁 Project Structure
+
+```text
+backend/
+  ├── config/
+  │   └── db.js
+  ├── models/
+  │   ├── Clinic.js
+  │   └── Notice.js
+  ├── routes/
+  │   ├── clinics.js
+  │   ├── notices.js
+  │   └── symptoms.js
+  ├── server.js
+  └── .env
+
+vite-project/   ← Frontend
+  ├── src/
+  │   ├── components/
+  │   │   ├── SymptomForm.jsx
+  │   │   ├── ClinicList.jsx
+  │   │   ├── Noticeboard.jsx
+  │   │   ├── Admin.jsx
+  │   │   ├── AddClinic.jsx
+  │   │   └── AddNotice.jsx
+  │   ├── api.js
+  │   └── App.jsx
+  └── package.json
+
+
+## 🔜 Planned Next Steps
+
+---
+
+## 1️⃣ Data Strategy (High Priority)
+Instead of manual entry:
+
+Use open government health datasets (India)
+
+Optionally enrich with NGO / community clinics
+
+Import data into MongoDB
+
+Keep Admin panel for local updates
+
+This ensures the system is:
+
+Scalable
+
+Ethical
+
+Aligned with underserved communities
+
+## 2️⃣ Intelligent Symptom → Clinic Logic
+Symptoms determine recommended care type:
+
+Clinic / PHC
+
+Hospital (emergency)
+
+Clinics will be:
+
+Filtered or highlighted
+
+Prioritized based on relevance
+
+This turns the app into a decision‑support tool.
+
+## 3️⃣ UX & Impact Improvements
+
+Clear guidance messages
+
+Highlight recommended facilities
+
+Simple, low‑cognitive‑load interface
+
+Optimized for first‑time or low‑literacy users
+
+---
+
+🏁 Current Status
+
+✅ Full MERN stack working
+
+✅ Admin + User flows implemented
+
+✅ MongoDB connected and stable
+
+🟡 Data seeding & intelligence layer in progress
+
+---
+
+## 👥 Notes for Aryan
+
+---
+
+Backend and frontend are stable
+
+Avoid refactoring structure without discussion
+
+Next focus areas:
+
+Data sourcing
+
+Symptom‑based logic
+
+Underserved‑community alignment
+
+---
